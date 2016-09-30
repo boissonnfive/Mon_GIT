@@ -1,0 +1,150 @@
+# git / github.com
+
+
+## Création du premier projet
+
+1. On commence par créer un dépôt vide sur github.com (Ex: Projet1).
+2. GitHub nous donne l'addresse du dépôt. Exemple :
+
+		https://github.com/boissonnfive/Projet1.git
+
+3. On revient en local sur son ordinateur.
+4. On se place dans le dossier de son projet.
+5. On lance git dans un terminal dans ce dossier.
+6. On tape la commande :
+
+		$ git init
+
+7. On ajoute tous les fichiers/dossiers du projet en tapant (pour chaque fichier) :
+
+		$ git add fichier
+
+	Ou (pour tous les fichiers d'un coup) :
+
+		$ git add *
+
+8. On fait un commit :
+
+		$ git commit -m "Première consigne"
+
+9. On définit l'adresse du serveur de dépôt (avec l'adresse du 2):
+
+		$ git remote add origin https://github.com/boissonnfive/Projet1.git
+
+10. On remonte les modifications sur le dépôt en tapant :
+
+		$ git push -u origin master
+
+11. À la prochaine modification en local sur un fichier, on tapera :
+
+		$ git add *
+		$ git commit -m "ce qu on vient de modifier"
+
+12. Et on exportera les modifications sur le dépôt distant en tapant :
+
+		$ git push -u origin master
+
+13. Si on veut supprimer le dernier commit (avant d'avoir fait un push) :
+[ATTENTION : Les modifications du dernier commit sont supprimées du fichier!]
+(Dans le log, le dernier commit n'apparaît plus)
+
+        $ git reset --hard HEAD~1
+
+14. A tout moment, on peut savoir où on en est par la commande :
+
+        $ git status
+
+15. A tout moment, on peut savoir tout ce qui a été fait par la commande :
+
+        $ git log
+
+
+## Configurer git ##
+
+	$ git config --global user.name "boissonnfive"
+	$ git config --global user.email boissonnfive@gmail.com
+	$ git config --list
+	...
+	user.name=boissonnfive
+	user.email=boissonnfive@gmail.com
+	...
+
+
+## Poser une étiquette (tag) ##
+
+Donne la liste des étiquettes déposées sur le projet:
+
+	$ git tag
+
+ou
+
+    $ git tag --list
+
+Pose une étiquette sur le projet:
+
+	$ git tag -a 'v0.0.1' -m 'première version du logiciel'
+
+ou
+
+    $ git tag v0.0.1
+
+Pose l'étiquette sur le dépôt partagé:
+
+	$ git push origin v0.0.1.0
+
+ou
+
+	$ git push origin --tags
+
+Et enfin, rapatrie la dernière consigne sur le dépôt :
+
+    $ git push origin master
+
+
+## github.com
+
+### Supprimer un dépôt sur GitHub ###
+
+    https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings
+
+
+### Compte boisonnfive
+
+- identifiant  : boissonnfive
+- mail         : boissonnfive@gmail.com
+
+### Compte expansia
+
+- identifiant  : expansia
+- mail         : stagiaire_etn.ara@pcas.com
+
+### Compte expansia
+
+- identifiant  : binfoservice
+- mail         : binfoservice@gmail.com
+
+---
+
+## Glossaire ##
+
+- **Repository** : Dépôt
+- **Check in** : Dépôt
+- **To check in** : Déposer, mettre en dépôt, faire un dépôt.
+- **Check out** : Retrait
+- **To check out** : Retirer, récupérer (parfois rapatrier est une bonne alternative)
+- **To commit** : Consigner
+- **Stage area** : Zone d'attente
+- **To stage** : Mettre en attente
+- **Change** : Modification (à préférer à changement)
+- **stash** : Remise
+- **To stash** : Remiser
+- **Checksum** : Somme de contrôle
+- **Hash** : Empreinte (Alternatives: signature, hachage (correct mais à éviter))
+- **Workflow** : Processus (Alternative: scénario)
+- **Snapshot** : Instantané
+- **Diff** : Diff
+- **To track** : Suivre
+- **untracked** : non-suivi
+- **unmodified** : non-modifié
+- **To update** : Mettre à jour
+
