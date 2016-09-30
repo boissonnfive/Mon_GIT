@@ -123,6 +123,27 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
 - identifiant  : binfoservice
 - mail         : binfoservice@gmail.com
 
+
+## Git sur Windows
+
+## Configuration ##
+
+- version : 2.5.3
+- architecture : 32 bits
+- "Use git from Git Bash only"
+- "Check-out Windows style, commit Unix-style line endings"
+- "Use MinTTY (the default terminal of MSys2)"
+- "Disable file system caching"
+
+## Notes ##
+
+Puisque Git Bash fonctionne à partir de MSys2, il inclut :
+
+- Une documentation : C:\Program Files\Git\mingw32\share\doc\git-doc\index.html
+- Bash
+- Perl 5.0
+- Vim 7.4
+
 ---
 
 ## Glossaire ##
