@@ -103,9 +103,13 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
 
 ## github.com
 
+### Hello World github
+
+<https://guides.github.com/activities/hello-world/>
+
 ### Supprimer un dépôt sur GitHub ###
 
-    https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings
+<https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings>
 
 
 ### Compte boisonnfive
@@ -123,6 +127,7 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
 - identifiant  : binfoservice
 - mail         : binfoservice@gmail.com
 
+---
 
 ## Git sur Windows
 
@@ -143,6 +148,36 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 - Bash
 - Perl 5.0
 - Vim 7.4
+
+---
+
+## Git par Marc
+
+### Pourquoi Git ? ###
+
+- Tracer par fonctionnalité plutôt que par fichier (commit)
+- Travailler déconnecté
+
+### Les consignes pour travailler avec Git ###
+
+- la branche principale pour le projet qui tourne + les branches pour développer (git branch)
+- => 1 compte Entreprise (organisation) + des comptes développeurs
+- Ne pas autoriser les dev à rappatrier sur la branche principale => Notion de "Release master/Responsable intégration" à qui on doit faire une pull request
+- git log,  git status, git rebase
+- lire l'API rest pour comprendre mieux le fonctionnement (<https://developer.github.com/v3/>)
+- Livre Progit de Scott Chacon
+
+### Procédure Git avancée ###
+
+1. On crée un compte "organisation"
+2. On crée un compte "release master" (seul à avoir les droits sur le dépôt)
+3. Chaque dévéloppeur se créer un dépôt
+4. Les développeurs doivent faire une copie du dépôt principal (fork) pour travailler sur le projet.
+5. Ils doivent faire un "pull" pour travailler en local.
+6. Ils doivent faire un "push" pour rappatrier sur leur serveur.
+7. Les dévéloppeurs devront faire une "pull request" pour demander au "release master" d'intégrer leurs modifs
+8. Il y a désynchronisation des dépôts : dépôts dévéloppeur local/serveur + dépôt dévéloppeur/dépôt organisation.
+9. On peut faire des "git reset" pour supprimer l'historique des commit, pour n'avoir qu'un seul commit lors de la "pull request".
 
 ---
 
