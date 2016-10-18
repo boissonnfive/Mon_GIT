@@ -58,6 +58,11 @@
 
         $ git log
 
+16. Si on a travaillé à partir d'un autre ordinateur et que l'on veut récupérer les modifications :
+
+        $ git pull
+
+
 
 ## Configurer git ##
 
@@ -68,6 +73,27 @@
     user.name=boissonnfive
     user.email=boissonnfive@gmail.com
     ...
+
+
+### Erreur 403 lors d'un push ###
+
+    git push origin master
+    remote: Permission to boissonnfive/Mon_GIT.git denied to expansia.
+    fatal: unable to access 'https://github.com/boissonnfive/Mon_GIT.git/': The requested URL returned error: 403
+
+Il faut modifier le fichier ./git/config :
+
+    …
+    [remote "origin"]
+    url = https://github.com/boissonnfive/Mon_GIT.git
+    …
+
+devient :
+
+    …
+    [remote "origin"]
+    url = https://boissonnfive@github.com/boissonnfive/Mon_GIT.git
+    …
 
 
 ## Poser une étiquette (tag) ##
@@ -101,6 +127,11 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
     $ git push origin master
 
 
+## Liens sur git ##
+
+- [git the simple guide](http://rogerdudler.github.io/git-guide/)
+
+
 ## github.com
 
 ### Hello World github
@@ -129,7 +160,7 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
 - identifiant  : expansia
 - mail         : stagiaire_etn.ara@pcas.com
 
-### Compte expansia
+### Compte binfoservice
 
 - identifiant  : binfoservice
 - mail         : binfoservice@gmail.com
