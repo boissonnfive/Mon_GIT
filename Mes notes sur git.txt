@@ -6,43 +6,43 @@
 1. On commence par créer un dépôt vide sur github.com (Ex: Projet1).
 2. GitHub nous donne l'addresse du dépôt. Exemple :
 
-		https://github.com/boissonnfive/Projet1.git
+        https://github.com/boissonnfive/Projet1.git
 
 3. On revient en local sur son ordinateur.
 4. On se place dans le dossier de son projet.
 5. On lance git dans un terminal dans ce dossier.
 6. On tape la commande :
 
-		$ git init
+        $ git init
 
 7. On ajoute tous les fichiers/dossiers du projet en tapant (pour chaque fichier) :
 
-		$ git add fichier
+        $ git add fichier
 
-	Ou (pour tous les fichiers d'un coup) :
+    Ou (pour tous les fichiers d'un coup) :
 
-		$ git add *
+        $ git add *
 
 8. On fait un commit :
 
-		$ git commit -m "Première consigne"
+        $ git commit -m "Première consigne"
 
 9. On définit l'adresse du serveur de dépôt (avec l'adresse du 2):
 
-		$ git remote add origin https://github.com/boissonnfive/Projet1.git
+        $ git remote add origin https://github.com/boissonnfive/Projet1.git
 
 10. On remonte les modifications sur le dépôt en tapant :
 
-		$ git push -u origin master
+        $ git push -u origin master
 
 11. À la prochaine modification en local sur un fichier, on tapera :
 
-		$ git add *
-		$ git commit -m "ce qu on vient de modifier"
+        $ git add *
+        $ git commit -m "ce qu on vient de modifier"
 
 12. Et on exportera les modifications sur le dépôt distant en tapant :
 
-		$ git push -u origin master
+        $ git push -u origin master
 
 13. Si on veut supprimer le dernier commit (avant d'avoir fait un push) :
 [ATTENTION : Les modifications du dernier commit sont supprimées du fichier!]
@@ -61,20 +61,20 @@
 
 ## Configurer git ##
 
-	$ git config --global user.name "boissonnfive"
-	$ git config --global user.email boissonnfive@gmail.com
-	$ git config --list
-	...
-	user.name=boissonnfive
-	user.email=boissonnfive@gmail.com
-	...
+    $ git config --global user.name "boissonnfive"
+    $ git config --global user.email boissonnfive@gmail.com
+    $ git config --list
+    ...
+    user.name=boissonnfive
+    user.email=boissonnfive@gmail.com
+    ...
 
 
 ## Poser une étiquette (tag) ##
 
 Donne la liste des étiquettes déposées sur le projet:
 
-	$ git tag
+    $ git tag
 
 ou
 
@@ -82,7 +82,7 @@ ou
 
 Pose une étiquette sur le projet:
 
-	$ git tag -a 'v0.0.1' -m 'première version du logiciel'
+    $ git tag -a 'v0.0.1' -m 'première version du logiciel'
 
 ou
 
@@ -90,11 +90,11 @@ ou
 
 Pose l'étiquette sur le dépôt partagé:
 
-	$ git push origin v0.0.1.0
+    $ git push origin v0.0.1.0
 
 ou
 
-	$ git push origin --tags
+    $ git push origin --tags
 
 Et enfin, rapatrie la dernière consigne sur le dépôt :
 
@@ -110,6 +110,13 @@ Et enfin, rapatrie la dernière consigne sur le dépôt :
 ### Supprimer un dépôt sur GitHub ###
 
 <https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings>
+
+1. Aller dans le dépôt à supprimer
+2. Aller dans le menu settings (roue dentée)
+3. Sous la bannière « Danger Zone », cliquer sur « Delete this repository »
+4. Lire les avertissements
+5. Pour vérifier que vous effacer le bon dépôt, tapez le nom du dépôt que vous voulez supprimer
+6. Cliquer sur « Je comprends les conséquences, effacez ce dépôt »
 
 
 ### Compte boisonnfive
@@ -203,4 +210,3 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 - **untracked** : non-suivi
 - **unmodified** : non-modifié
 - **To update** : Mettre à jour
-
