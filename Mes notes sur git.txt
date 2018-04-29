@@ -21,7 +21,7 @@
 
     Ou (pour tous les fichiers d'un coup) :
 
-        $ git add *
+        $ git add .
 
 8. On fait un commit :
 
@@ -33,16 +33,16 @@
 
 10. On remonte les modifications sur le dépôt en tapant :
 
-        $ git push -u origin master
+        $ git push origin master
 
 11. À la prochaine modification en local sur un fichier, on tapera :
 
-        $ git add *
+        $ git add .
         $ git commit -m "ce qu on vient de modifier"
 
 12. Et on exportera les modifications sur le dépôt distant en tapant :
 
-        $ git push -u origin master
+        $ git push origin master
 
 13. Si on veut supprimer le dernier commit (avant d'avoir fait un push) :
 [ATTENTION : Les modifications du dernier commit sont supprimées du fichier!]
@@ -50,7 +50,7 @@
 
         $ git reset --hard HEAD~1
 
-14. A tout moment, on peut savoir où on en est par la commande :
+14. À tout moment, on peut savoir où on en est par la commande :
 
         $ git status
 
@@ -58,10 +58,24 @@
 
         $ git log
 
-16. Si on a travaillé à partir d'un autre ordinateur et que l'on veut récupérer les modifications :
+16. Si on a travaillé à partir d'un autre ordinateur (ou qu'une autre personne a travaillé sur le projet) et que l'on veut récupérer les modifications :
 
-        $ git pull
+        $ git pull origin master
 
+17. Si on veut modifier quelque chose sur un projet, il vaut mieux travailler sur une branche :
+
+        $ git branch ajout
+        $ git checkout ajout
+
+18. Pour faire des modifications, c'est toujours le même processus : add + commit
+19. Pour rappatrier les modifications sur la branche principale
+
+        $ git checkout master
+        $ git merge ajout
+
+20. On efface la branche inutile :
+
+        $ git branch -d ajout
 
 
 ## Configurer git ##
@@ -114,22 +128,20 @@ ou
 
     $ git tag v0.0.1
 
-Pose l'étiquette sur le dépôt partagé:
+Pose l'étiquette sur le dépôt partagé (après avoir fait un git push origin master) :
 
-    $ git push origin v0.0.1.0
+    $ git push origin v0.0.1
 
 ou
 
     $ git push origin --tags
 
-Et enfin, rapatrie la dernière consigne sur le dépôt :
-
-    $ git push origin master
 
 
 ## Liens sur git ##
 
 - [git the simple guide](http://rogerdudler.github.io/git-guide/)
+- [Maîtriser Git en 28 minutes et 32 secondes](https://www.youtube.com/watch?v=5IcYILdejs8)
 
 
 ## github.com
