@@ -78,6 +78,34 @@
         $ git branch -d ajout
 
 
+## Poser une étiquette (tag) ##
+
+Donne la liste des étiquettes déposées sur le projet:
+
+    $ git tag
+
+ou
+
+    $ git tag --list
+
+Pose une étiquette sur le projet:
+
+    $ git tag -a 'v0.0.1' -m 'première version du logiciel'
+
+ou
+
+    $ git tag v0.0.1
+
+Pose l'étiquette sur le dépôt partagé (après avoir fait un git push origin master) :
+
+    $ git push origin v0.0.1
+
+ou
+
+    $ git push origin --tags
+
+
+
 ## Configurer git ##
 
     $ git config --global user.name "boissonnfive"
@@ -110,33 +138,26 @@ devient :
     …
 
 
-## Poser une étiquette (tag) ##
+## Utiliser pro de Tristan Hume
 
-Donne la liste des étiquettes déposées sur le projet:
+[Dépôt GitHub](https://github.com/trishume/pro)
 
-    $ git tag
+Ce petit logiciel ruby sert à lister les dépôts Git qui ont des modifications en cours, grâce à la commande :
 
-ou
+    pro status
 
-    $ git tag --list
+Ce logiciel va regarder dans les répertoires enregistrés dans son fichier **~/.proBase**. Voici le mien:
 
-Pose une étiquette sur le projet:
+    /Users/bruno/Desktop/GitHub
+    /Users/bruno/Library/Application Support/Sublime Text 3/Packages/User
 
-    $ git tag -a 'v0.0.1' -m 'première version du logiciel'
+Pour aller dans le répertoire qui contient une modif, on fait :
 
-ou
+    pd partieDuNomDuRépertoire # ex : pd app (pour AppleScript)
 
-    $ git tag v0.0.1
+Enfin, on peut appliquer une commande à tous les dépôts en même temps avec la commande :
 
-Pose l'étiquette sur le dépôt partagé (après avoir fait un git push origin master) :
-
-    $ git push origin v0.0.1
-
-ou
-
-    $ git push origin --tags
-
-
+    pro run commande
 
 ## Liens sur git ##
 
