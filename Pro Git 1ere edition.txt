@@ -25,29 +25,70 @@ Ce fichier contient les notes que j'ai prises à la lecture du livre Pro Git de 
 
 ### Fonctionnement de Git
 
-### Les 3 états
+#### Les 3 états
 
 + Modifié : des fichiers sont modifiés et n'ont pas été validés en BDD.
 + Indexé  : des fichiers modifiés ont été marqués dans leur version actuelle pour faire partie du prochain instantanné du projet.
 + Validé  : les données sont stockées en sécurité dans votre BDD locale.
 
-### Les 3 dimensions :
+#### Les 3 dimensions :
 
-+ Le répertoire Git        : `commit` pour mettre un instantanné dedans, `init` pour le créer, `clone` pour le récupérer d'ailleurs.
-+ Le répertoire de travail : `checkout` pour récupérer le contenu du répertoire Git
-+ La zone d'index          : `add`, pour mettre des fichiers dedans
++ Le répertoire Git        : dossier dans lequel Git stocke les méta-données et la base de données des objets de votre projet (`commit` pour mettre un instantanné dedans, `init` pour le créer, `clone` pour le récupérer d'ailleurs).
++ Le répertoire de travail : une extraction unique d'une version du projet (`checkout` pour récupérer le contenu du répertoire Git)
++ La zone d'index          : un simple fichier, généralement situé dans le répertoire Git, qui stocke les informations concernant ce qui fera pertie du prochain instantané (`add`, pour mettre des fichiers dedans)
 
 
-### Processus d'utilisation de Git
+#### Processus d'utilisation de Git
 
 1. Modification des fichiers dans le répertoire de travail
-2. Indexation des fichiers modifiés, ce qui ajoute des instanés dans la zone d'index
-3. Validation
+2. Indexation des fichiers modifiés, ce qui ajoute des instantanés dans la zone d'index.
+3. Validation : les instantanés de la zone d'index sont basculés dans la base de données du répertoire Git.
+
+### Installation
+
+- Installé de base sur MacOS
+- Linux, trivial
+- Windows, trivial avec MsysGit
+
+### Configuration
+
+- La config est stockée à 3 endroits :
+    + globale système
+    + globale utilisateur
+    + dans le projet
+
+- nom d'utilisateur : 
+
+        git config --global user.name "boissonnfive"
+
+- adresse mail :
+
+        git config --global user.email "boissonnfive@gmail.com"
+
+- éditeur de texte :
+
+        git config --global core.editor ???????
+
+- Vérification des réglages :
+
+        git config --list
+
+*NOTE: enlever `--global` pour une config spécifique au projet.*
 
 
 
+### Aide
 
------------------------- VRAC -----------------------------
+    $ git help <verbe>
+    $ git <verbe> --help
+    $ man git-<verbe>
+
+
+## Chapitre 2
+
+
+
+## ------------------------ VRAC -----------------------------
 
 - Git gère des instantanés pas des différences : à chaque enregistrement du projet, Git prend un instantané du contenu de votre espace de travail du moment (comme un système de fichiers)
 - Toutes les opérations sont locales
