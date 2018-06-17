@@ -1,0 +1,66 @@
+# Pro Git (1ére Édition) - Mes notes
+
+Ce fichier contient les notes que j'ai prises à la lecture du livre Pro Git de Scott Chacon (1ère édition). Les titres des chapitres correspondent au livre. En revanche, les sous-titres sont de moi et correspondent à ma propre organisation des idées relevées.
+
+## Chapitre 1
+
+### Définition de Git
+
+-   Git est un gestionnaire de version.
+    **Un gestionnaire de version est un système qui enregistre l'évolution d'un fichier ou d'un ensemble de fichiers au cours du temps de manière à ce qu'on puisse rappeler une version antérieure d'un fichier à tout moment.**
+- Git est un système de gestion de version **distribué**
+- Les objectifs de Git :
+    + Vitesse
+    + Compacité des données
+    + Conception simple
+    + Support pour les développements non linéaires
+    + Complètement distribué
+
+### Les avantages de Git
+
+- Rapidité : Git stocke l'intégralité des données en local, les données sont compactées et il utilise des instantanés au lieu de différences.
+- Travail sans liaison internet : Git est un système distribué, l'utilisateur possède l'entièreté du système et des données en local.
+- Perte de données impossible : Git gère l'intégrité des fichiers avec une somme de contrôle (empreinte SHA-1) et ne fait qu'ajouter des données (et pas en effacer).
+
+
+### Fonctionnement de Git
+
+### Les 3 états
+
++ Modifié : des fichiers sont modifiés et n'ont pas été validés en BDD.
++ Indexé  : des fichiers modifiés ont été marqués dans leur version actuelle pour faire partie du prochain instantanné du projet.
++ Validé  : les données sont stockées en sécurité dans votre BDD locale.
+
+### Les 3 dimensions :
+
++ Le répertoire Git        : `commit` pour mettre un instantanné dedans, `init` pour le créer, `clone` pour le récupérer d'ailleurs.
++ Le répertoire de travail : `checkout` pour récupérer le contenu du répertoire Git
++ La zone d'index          : `add`, pour mettre des fichiers dedans
+
+
+### Processus d'utilisation de Git
+
+1. Modification des fichiers dans le répertoire de travail
+2. Indexation des fichiers modifiés, ce qui ajoute des instanés dans la zone d'index
+3. Validation
+
+
+
+
+------------------------ VRAC -----------------------------
+
+- Git gère des instantanés pas des différences : à chaque enregistrement du projet, Git prend un instantané du contenu de votre espace de travail du moment (comme un système de fichiers)
+- Toutes les opérations sont locales
+- Git gère l'intégrité : avec une somme de contôle qui est une empreinte SHA-1
+- Généralement, Git ne fait qu'ajouter des données : il est très difficile de faire réaliser au système des actions qui ne soient pas réversibles ou de lui faire effacer des données d'une quelconque manière.
+
+----
+
+#### Notes sur l'historique des système de gestion de version
+
+-   Évolution de la gestion de version :
+1. Un répertoire par version : le problème c'est qu'il ne faut pas oublier de le créer à chaque fois sinon on écrase son projet qui fonctionne.
+2. Une BDD locale : l'inconvénient c'est qu'il est difficile de travailler à plusieurs
+3. Une BDD centralisée (collaboration) : le problème de la BDD centralisée :
+    + Le serveur doit être disponible tout le temps (pas de panne)
+    + Le serveur doit être **sauvegardé** obligatoirement
