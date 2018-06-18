@@ -68,7 +68,7 @@
         $ git checkout ajout
 
 18. Pour faire des modifications, c'est toujours le même processus : add + commit
-19. Pour rappatrier les modifications sur la branche principale
+19. Pour rapatrier les modifications sur la branche principale
 
         $ git checkout master
         $ git merge ajout
@@ -159,6 +159,38 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
 
     pro run commande
 
+
+## Quelques commandes git supplémentaires
+
+Relocaliser le dépôt distant :
+
+    $ git remote -v # pour lister le dépôt distant
+    origin https://github.com/boissonnfive/Projet1.git (fetch)
+    origin https://github.com/boissonnfive/Projet1.git (push)
+    $ git remote set-url origin https://github.com/boissonnfive/Nouveau-Projet.git
+    $ git remote -v
+    origin https://github.com/boissonnfive/Nouveau-Projet.git (fetch)
+    origin https://github.com/boissonnfive/Nouveau-Projet.git (push)
+
+
+## Différence entre checkout et reset
+
+Un checkout c'est pour faire sortir du dépôt une certaine version/commit (mais quand on n'a pas mis de fichiers en attente — git add). Le checkout va écraser tous les fichiers du répertoire de travail avec ce qu'il y a dans le dépôt.
+
+Par contre, si on a mis des fichiers en attente (staging avec git add), il faut utiliser `git reset` pour remettre à zéro la zone d'attente.
+
+    $ git reset --hard‌
+    # Pour effacer tous les fichiers indexés mais pas validés (commit => donc pas dans le dépôt) : on remet à zéro la zone d'attente et on efface les modifications (--hard)
+
+    $ git reset HEAD <file>..." to unstage
+    # Pour sortir un fichier de l'index (de la zone d'attente)
+
+    $ git reset master
+    Unstaged changes after reset:
+    M   fichier2.txt
+    # Le commit de la modification du fichier fichier2.txt a été supprimé (voir git log), mais la modification est encore dans le fichier car on n'a pas fait de `--hard` ni de checkout. Git a supprimé tous les commit supérieurs au dernier commit de la branche master. Mais les modifications sont restées (fichiers créés ou modifs dans les fichiers)
+
+
 ## Liens sur git ##
 
 - [git the simple guide](http://rogerdudler.github.io/git-guide/)
@@ -170,6 +202,23 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
 ### Hello World github
 
 <https://guides.github.com/activities/hello-world/>
+
+### Rapatrier un dépôt local sur GitHub (ou faire un fork à la main)
+
+1. Créez un dépôt sur GitHub **sans ajouter de fichier README.md**.
+2. Récupérez l’adresse du dépôt (ex :https://github.com/boissonnfive/LWC_travel-site.git)
+3. Ajoutez l’adresse du dépôt distant :
+ 
+        git remote add origin https://github.com/boissonnfive/LWC_travel-site.git
+
+4. Ou modifiez l’adresse :
+
+        git remote set-url origin https://github.com/boissonnfive/LWC_travel-site.git
+
+5. Exportez le dépôt local sur GitHub :
+ 
+        git push origin master
+
 
 ### Supprimer un dépôt sur GitHub ###
 
