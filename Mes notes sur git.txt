@@ -50,30 +50,39 @@
 
         $ git reset --hard HEAD~1
 
-14. À tout moment, on peut savoir où on en est par la commande :
+14. Si on veut supprimer un (ou des) fichier(s) de la zone d'attente (staged)
+[Les modifications dans les fichiers sont conservées]
+
+        $ git reset HEAD "nom du fichier"
+
+    ou
+
+        $ git reset HEAD .
+
+15. À tout moment, on peut savoir où on en est par la commande :
 
         $ git status
 
-15. A tout moment, on peut savoir tout ce qui a été fait par la commande :
+16. A tout moment, on peut savoir tout ce qui a été fait par la commande :
 
         $ git log
 
-16. Si on a travaillé à partir d'un autre ordinateur (ou qu'une autre personne a travaillé sur le projet) et que l'on veut récupérer les modifications :
+17. Si on a travaillé à partir d'un autre ordinateur (ou qu'une autre personne a travaillé sur le projet) et que l'on veut récupérer les modifications :
 
         $ git pull origin master
 
-17. Si on veut modifier quelque chose sur un projet, il vaut mieux travailler sur une branche :
+18. Si on veut modifier quelque chose sur un projet, il vaut mieux travailler sur une branche :
 
         $ git branch ajout
         $ git checkout ajout
 
-18. Pour faire des modifications, c'est toujours le même processus : add + commit
-19. Pour rapatrier les modifications sur la branche principale
+19. Pour faire des modifications, c'est toujours le même processus : add + commit
+20. Pour rapatrier les modifications sur la branche principale
 
         $ git checkout master
         $ git merge ajout
 
-20. On efface la branche inutile :
+21. On efface la branche inutile :
 
         $ git branch -d ajout
 
@@ -194,6 +203,18 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
 
     $ git config --global diff.tool vimdiff      # or merge.tool to get merging too!
     $ git difftool commit1 commit2
+
+
+## Revenir à un commit précédent (et tout supprimer après)
+
+    # Reset the index and working tree to the desired tree
+    # Ensure you have no uncommitted changes that you want to keep
+    $ git reset --hard 56e05fced
+    
+    # Move the branch pointer back to the previous HEAD
+    $ git reset --soft HEAD@{1}
+    
+    $ git commit -m "Revert to 56e05fced"
 
 
 ## Différence entre checkout et reset
