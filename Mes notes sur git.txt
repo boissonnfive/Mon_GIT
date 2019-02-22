@@ -162,7 +162,7 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
 
 ## Quelques commandes git supplémentaires
 
-Relocaliser le dépôt distant :
+### Relocaliser le dépôt distant :
 
     $ git remote -v # pour lister le dépôt distant
     origin https://github.com/boissonnfive/Projet1.git (fetch)
@@ -173,7 +173,24 @@ Relocaliser le dépôt distant :
     origin https://github.com/boissonnfive/Nouveau-Projet.git (push)
 
 
-Faire des comparaisons de fichiers UTF-16 :
+### Retrouver les modifications faites dans les fichiers
+
+**En cours et non mis en attente (staged)**
+
+    $ git diff (no parameters)
+    # Print out differences between your working directory and the index.
+
+**Entre les fichiers mis en attente et la dernière consigne (commit)**
+
+    $ git diff --cached
+    # Print out differences between the index and HEAD (current commit).
+
+**Entre les fichiers modifiés et non mis en attente et la dernière consigne**
+
+    $ git diff HEAD
+    # Print out differences between your working directory and the HEAD.
+
+**Faire des comparaisons de fichiers UTF-16**
 
     $ git config --global diff.tool vimdiff      # or merge.tool to get merging too!
     $ git difftool commit1 commit2
