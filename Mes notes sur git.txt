@@ -138,12 +138,26 @@ Pose l'étiquette sur le dépôt partagé (**après avoir fait un git push origi
 
 ## Configurer git
 
+### Paramètres globaux
+
     $ git config --global user.name "boissonnfive"
     $ git config --global user.email boissonnfive@gmail.com
     $ git config --list
     ...
     user.name=boissonnfive
     user.email=boissonnfive@gmail.com
+    ...
+
+### Paramètres locaux
+
+Il est possible d'enregistrer un utilisateur par projet, quand celui-ci est différent de l'utilisateur global enregistré plus haut. Pour créer un utilisateur local au projet, on fera :
+
+    $ git config user.name "binfoserviceDEV"
+    $ git config user.email contact@binfoservice.fr
+    $ git config --list
+    ...
+    user.name=binfoserviceDEV
+    user.email=contact@binfoservice.fr
     ...
 
 
@@ -153,19 +167,13 @@ Pose l'étiquette sur le dépôt partagé (**après avoir fait un git push origi
     remote: Permission to boissonnfive/Mon_GIT.git denied to expansia.
     fatal: unable to access 'https://github.com/boissonnfive/Mon_GIT.git/': The requested URL returned error: 403
 
-Il faut modifier le fichier ./git/config :
+Il faut utiliser le bon utilisateur. Ici, __expansia__ n'est pas le propriétaire du dépôt « Mon_GIT ». Il faut utiliser l'utilisateur **boissonnfive**.
 
-    …
-    [remote "origin"]
-    url = https://github.com/boissonnfive/Mon_GIT.git
-    …
+Pour vérifier le nom d'utilisateur qui sera utilisé pour le push, faire :
 
-devient :
+    $ git config --list
 
-    …
-    [remote "origin"]
-    url = https://boissonnfive@github.com/boissonnfive/Mon_GIT.git
-    …
+Et vérifier la valeur de `user.name`.
 
 
 ## Utiliser pro de Tristan Hume
@@ -183,7 +191,7 @@ Ce logiciel va regarder dans les répertoires enregistrés dans son fichier **~/
 
 Pour aller dans le répertoire qui contient une modif, on fait :
 
-    pd partieDuNomDuRépertoire # ex : pd app (pour AppleScript)
+    pd partieDuNomDuRépertoire  # ex : pd app (pour AppleScript)
 
 Enfin, on peut appliquer une commande à tous les dépôts en même temps avec la commande :
 
