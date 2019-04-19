@@ -1,5 +1,22 @@
 # git / github.com
 
+<!-- MarkdownTOC uri_encoding="false" -->
+
+- [Création du premier projet](#user-content-création-du-premier-projet)
+- [Poser une étiquette \(tag\)](#user-content-poser-une-étiquette-tag)
+- [Configurer git](#user-content-configurer-git)
+- [Utiliser pro de Tristan Hume](#user-content-utiliser-pro-de-tristan-hume)
+- [Quelques commandes git supplémentaires](#user-content-quelques-commandes-git-supplémentaires)
+- [Revenir à un commit précédent \(et tout supprimer après\)](#user-content-revenir-à-un-commit-précédent-et-tout-supprimer-après)
+- [Différence entre checkout et reset](#user-content-différence-entre-checkout-et-reset)
+- [github.com](#user-content-githubcom)
+- [Git sur Windows](#user-content-git-sur-windows)
+- [Git par Marc](#user-content-git-par-marc)
+- [Bibliographie](#user-content-bibliographie)
+- [Glossaire](#user-content-glossaire)
+
+<!-- /MarkdownTOC -->
+
 
 ## Création du premier projet
 
@@ -87,35 +104,39 @@
         $ git branch -d ajout
 
 
-## Poser une étiquette (tag) ##
+## Poser une étiquette (tag)
 
 Donne la liste des étiquettes déposées sur le projet:
 
-    $ git tag
-
-ou
-
-    $ git tag --list
+    $ git tag  # ou : $ git tag --list
 
 Pose une étiquette sur le projet:
 
-    $ git tag -a 'v0.0.1' -m 'première version du logiciel'
-
-ou
-
-    $ git tag v0.0.1
+    $ git tag v0.0.1  # ou : $ git tag -a 'v0.0.1' -m 'première version du logiciel'
 
 Pose l'étiquette sur le dépôt partagé (**après avoir fait un git push origin master**) :
 
-    $ git push origin v0.0.1
-
-ou
-
-    $ git push origin --tags
+    $ git push origin v0.0.1  # ou : $ git push origin master --tags
 
 
+**Déplacer l'étiquette (tag) sur un nouveau commit**
 
-## Configurer git ##
+1. Delete the tag on any remote before you push :
+
+        $ git push origin :refs/tags/<tagname>
+
+2. Replace the tag to reference the most recent commit :
+
+        $ git tag -fa <tagname>
+
+3. Push the tag to the remote origin :
+
+        $ git push origin master --tags
+
+
+
+
+## Configurer git
 
     $ git config --global user.name "boissonnfive"
     $ git config --global user.email boissonnfive@gmail.com
@@ -126,7 +147,7 @@ ou
     ...
 
 
-### Erreur 403 lors d'un push ###
+### Erreur 403 lors d'un push
 
     git push origin master
     remote: Permission to boissonnfive/Mon_GIT.git denied to expansia.
@@ -235,17 +256,7 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
     # Le commit de la modification du fichier fichier2.txt a été supprimé (voir git log), mais la modification est encore dans le fichier car on n'a pas fait de `--hard` ni de checkout. Git a supprimé tous les commit supérieurs au dernier commit de la branche master. Mais les modifications sont restées (fichiers créés ou modifs dans les fichiers)
 
 
-## Liens sur git ##
-
-- [git the simple guide](http://rogerdudler.github.io/git-guide/)
-- [Maîtriser Git en 28 minutes et 32 secondes](https://www.youtube.com/watch?v=5IcYILdejs8)
-
-
 ## github.com
-
-### Hello World github
-
-<https://guides.github.com/activities/hello-world/>
 
 ### Rapatrier un dépôt local sur GitHub (ou faire un fork à la main)
 
@@ -264,16 +275,17 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
         git push origin master
 
 
-### Supprimer un dépôt sur GitHub ###
+### Supprimer un dépôt sur GitHub
 
-<https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings>
+1. Aller dans le dépôt à supprimer.
+2. Aller dans le menu settings (roue dentée) :
 
-1. Aller dans le dépôt à supprimer
-2. Aller dans le menu settings (roue dentée)
-3. Sous la bannière « Danger Zone », cliquer sur « Delete this repository »
-4. Lire les avertissements
-5. Pour vérifier que vous effacer le bon dépôt, tapez le nom du dépôt que vous voulez supprimer
-6. Cliquer sur « Je comprends les conséquences, effacez ce dépôt »
+        https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/settings
+
+3. Sous la bannière **« Danger Zone »**, cliquer sur **« Delete this repository »**.
+4. Lire les avertissements.
+5. Pour vérifier que vous effacez le bon dépôt, tapez le nom du dépôt que vous voulez supprimer.
+6. Cliquer sur **« Je comprends les conséquences, effacez ce dépôt »**.
 
 
 ### Compte boisonnfive
@@ -286,16 +298,16 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
 - identifiant  : expansia
 - mail         : stagiaire_etn.ara@pcas.com
 
-### Compte binfoservice
+### Compte binfoserviceDEV
 
-- identifiant  : binfoservice
-- mail         : binfoservice@gmail.com
+- identifiant  : binfoserviceDEV
+- mail         : contact@binfoservice.fr
 
 ---
 
 ## Git sur Windows
 
-## Configuration ##
+### Configuration de l'installation
 
 - version : 2.5.3
 - architecture : 32 bits
@@ -304,7 +316,7 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
 - "Use MinTTY (the default terminal of MSys2)"
 - "Disable file system caching"
 
-## Notes ##
+### Notes
 
 Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
@@ -317,12 +329,12 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
 ## Git par Marc
 
-### Pourquoi Git ? ###
+### Pourquoi Git ?
 
 - Tracer par fonctionnalité plutôt que par fichier (commit)
 - Travailler déconnecté
 
-### Les consignes pour travailler avec Git ###
+### Les consignes pour travailler avec Git
 
 - la branche principale pour le projet qui tourne + les branches pour développer (git branch)
 - => 1 compte Entreprise (organisation) + des comptes développeurs
@@ -331,7 +343,7 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 - lire l'API rest pour comprendre mieux le fonctionnement (<https://developer.github.com/v3/>)
 - Livre Progit de Scott Chacon
 
-### Procédure Git avancée ###
+### Procédure Git avancée
 
 1. On crée un compte "organisation"
 2. On crée un compte "release master" (seul à avoir les droits sur le dépôt)
@@ -345,7 +357,15 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
 ---
 
-## Glossaire ##
+## Bibliographie
+
+- [git the simple guide](http://rogerdudler.github.io/git-guide/)
+- [Maîtriser Git en 28 minutes et 32 secondes](https://www.youtube.com/watch?v=5IcYILdejs8)
+- [Hello World github](https://guides.github.com/activities/hello-world/)
+- [ProGit de Scott Chacon](https://git-scm.com/book/fr/v2)
+
+
+## Glossaire
 
 - **Repository** : Dépôt
 - **Check in** : Dépôt
