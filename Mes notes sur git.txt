@@ -76,30 +76,41 @@
 
         $ git reset HEAD .
 
-15. À tout moment, on peut savoir où on en est par la commande :
+15. Si on veut supprimer un fichier du dépôt
+[Le fichier est effacé du disque]
+
+        git rm fichier.txt
+        git commit -m "Suppression du fichier fichier.txt"
+
+16. Si on veut supprimer un fichier du dépôt, mais pas du disque
+
+        git rm --cached fichier.txt
+        git commit -m "Suppression du fichier fichier.txt"
+
+17. À tout moment, on peut savoir où on en est par la commande :
 
         $ git status
 
-16. A tout moment, on peut savoir tout ce qui a été fait par la commande :
+18. A tout moment, on peut savoir tout ce qui a été fait par la commande :
 
         $ git log
 
-17. Si on a travaillé à partir d'un autre ordinateur (ou qu'une autre personne a travaillé sur le projet) et que l'on veut récupérer les modifications :
+19. Si on a travaillé à partir d'un autre ordinateur (ou qu'une autre personne a travaillé sur le projet) et que l'on veut récupérer les modifications :
 
         $ git pull origin master
 
-18. Si on veut modifier quelque chose sur un projet, il vaut mieux travailler sur une branche :
+20. Si on veut modifier quelque chose sur un projet, il vaut mieux travailler sur une branche :
 
         $ git branch ajout
         $ git checkout ajout
 
-19. Pour faire des modifications, c'est toujours le même processus : add + commit
-20. Pour rapatrier les modifications sur la branche principale
+21. Pour faire des modifications, c'est toujours le même processus : add + commit
+22. Pour rapatrier les modifications sur la branche principale
 
         $ git checkout master
         $ git merge ajout
 
-21. On efface la branche inutile :
+23. On efface la branche inutile :
 
         $ git branch -d ajout
 
