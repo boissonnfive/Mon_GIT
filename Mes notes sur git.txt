@@ -7,7 +7,6 @@
 - [Configurer git](#user-content-configurer-git)
 - [Utiliser pro de Tristan Hume](#user-content-utiliser-pro-de-tristan-hume)
 - [Quelques commandes git supplémentaires](#user-content-quelques-commandes-git-supplémentaires)
-- [Revenir à un commit précédent \(et tout supprimer après\)](#user-content-revenir-à-un-commit-précédent-et-tout-supprimer-après)
 - [Différence entre checkout et reset](#user-content-différence-entre-checkout-et-reset)
 - [github.com](#user-content-githubcom)
 - [Git sur Windows](#user-content-git-sur-windows)
