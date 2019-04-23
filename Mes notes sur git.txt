@@ -245,7 +245,7 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
     $ git difftool commit1 commit2
 
 
-## Revenir à un commit précédent (et tout supprimer après)
+### Revenir à un commit précédent (et tout supprimer après)
 
     # Reset the index and working tree to the desired tree
     # Ensure you have no uncommitted changes that you want to keep
@@ -255,6 +255,12 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
     $ git reset --soft HEAD@{1}
     
     $ git commit -m "Revert to 56e05fced"
+
+
+### Supprimer un ou plusieurs des derniers commits
+
+    git push -f origin <last_known_good_commit>:<branch_name>
+    git reset --hard <last_known_good_commit>
 
 
 ## Différence entre checkout et reset
@@ -386,23 +392,23 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
 ## Glossaire
 
-- **Repository** : Dépôt
-- **Check in** : Dépôt
-- **To check in** : Déposer, mettre en dépôt, faire un dépôt.
-- **Check out** : Retrait
+- **Repository**   : Dépôt
+- **Check in**     : Dépôt
+- **To check in**  : Déposer, mettre en dépôt, faire un dépôt.
+- **Check out**    : Retrait
 - **To check out** : Retirer, récupérer (parfois rapatrier est une bonne alternative)
-- **To commit** : Consigner
-- **Stage area** : Zone d'attente
-- **To stage** : Mettre en attente
-- **Change** : Modification (à préférer à changement)
-- **stash** : Remise
-- **To stash** : Remiser
-- **Checksum** : Somme de contrôle
-- **Hash** : Empreinte (Alternatives: signature, hachage (correct mais à éviter))
-- **Workflow** : Processus (Alternative: scénario)
-- **Snapshot** : Instantané
-- **Diff** : Diff
-- **To track** : Suivre
-- **untracked** : non-suivi
-- **unmodified** : non-modifié
-- **To update** : Mettre à jour
+- **To commit**    : Consigner
+- **Stage area**   : Zone d'attente
+- **To stage**     : Mettre en attente
+- **Change**       : Modification (à préférer à changement)
+- **stash**        : Remise
+- **To stash**     : Remiser
+- **Checksum**     : Somme de contrôle
+- **Hash**         : Empreinte (Alternatives: signature, hachage (correct mais à éviter))
+- **Workflow**     : Processus (Alternative: scénario)
+- **Snapshot**     : Instantané
+- **Diff**         : Diff
+- **To track**     : Suivre
+- **untracked**    : non-suivi
+- **unmodified**   : non-modifié
+- **To update**    : Mettre à jour
