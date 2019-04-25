@@ -262,6 +262,11 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
     git reset --hard <last_known_good_commit>
 
 
+### Message « Detached HEAD »
+
+Il faut créer une branche pour tout remettre sur master, voir [ici](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
+
+
 ## Différence entre checkout et reset
 
 Un checkout c'est pour faire sortir du dépôt une certaine version/commit (mais quand on n'a pas mis de fichiers en attente — git add). Le checkout va écraser tous les fichiers du répertoire de travail avec ce qu'il y a dans le dépôt.
