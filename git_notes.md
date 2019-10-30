@@ -210,6 +210,13 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
 
 ## Quelques commandes git supplémentaires
 
+### Renommer un fichier
+
+    $ git mv ancien_nom_fichier nouveau_nom_fichier
+    $ git status # Pour vérifier
+    $ git commit -m "ancien_nom_fichier devient nouveau_nom_fichier"
+    $ git push origin ma_branch
+
 ### Relocaliser le dépôt distant :
 
     $ git remote -v # pour lister le dépôt distant
