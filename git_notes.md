@@ -2,22 +2,29 @@
 
 <!-- MarkdownTOC uri_encoding="false" -->
 
-- [Création du premier projet](#user-content-création-du-premier-projet)
-- [Poser une étiquette \(tag\)](#user-content-poser-une-étiquette-tag)
-- [Configurer git](#user-content-configurer-git)
-- [Utiliser pro de Tristan Hume](#user-content-utiliser-pro-de-tristan-hume)
-- [Quelques commandes git supplémentaires](#user-content-quelques-commandes-git-supplémentaires)
+- [COMMENT J'UTILISE GIT & GITHUB](#user-content-comment-jutilise-git--github)
+- [CRÉATION DU PREMIER PROJET](#user-content-création-du-premier-projet)
+- [POSER UNE ÉTIQUETTE \(TAG\)](#user-content-poser-une-étiquette-tag)
+- [CONFIGURER GIT](#user-content-configurer-git)
+- [UTILISER PRO DE TRISTAN HUME](#user-content-utiliser-pro-de-tristan-hume)
+- [COMMANDES GIT SUPPLÉMENTAIRES](#user-content-commandes-git-supplémentaires)
 - [Différence entre checkout et reset](#user-content-différence-entre-checkout-et-reset)
-- [github.com](#user-content-githubcom)
-- [Git sur Windows](#user-content-git-sur-windows)
-- [Git par Marc](#user-content-git-par-marc)
-- [Bibliographie](#user-content-bibliographie)
-- [Glossaire](#user-content-glossaire)
+- [GITHUB.COM](#user-content-githubcom)
+- [GIT SUR WINDOWS](#user-content-git-sur-windows)
+- [GIT PAR MARC](#user-content-git-par-marc)
+- [BIBLIOGRAPHIE](#user-content-bibliographie)
+- [GLOSSAIRE](#user-content-glossaire)
 
 <!-- /MarkdownTOC -->
 
+## COMMENT J'UTILISE GIT & GITHUB
 
-## Création du premier projet
+1. **pro status** => quel est le statut de mes dépôts
+(mes dépôts sont dans les dossiers renseignés dans le fichier ~/.proBase
+2. **pd repos** => Je vais dans le dépôts concerné (repos peut être un bout du nom du dépôt - alias défini dans ~/.bash_profile)
+3. **gs + ga + gcm + gpom** => mes alias pour utiliser git (fichier ~/.bash_profile)
+
+## CRÉATION DU PREMIER PROJET
 
 1. On commence par créer un dépôt vide sur github.com (Ex: Projet1).
 2. GitHub nous donne l'addresse du dépôt. Exemple :
@@ -114,7 +121,7 @@
         $ git branch -d ajout
 
 
-## Poser une étiquette (tag)
+## POSER UNE ÉTIQUETTE (TAG)
 
 Donne la liste des étiquettes déposées sur le projet:
 
@@ -146,7 +153,7 @@ Pose l'étiquette sur le dépôt partagé (**après avoir fait un git push origi
 
 
 
-## Configurer git
+## CONFIGURER GIT
 
 ### Paramètres globaux
 
@@ -186,7 +193,7 @@ Pour vérifier le nom d'utilisateur qui sera utilisé pour le push, faire :
 Et vérifier la valeur de `user.name`.
 
 
-## Utiliser pro de Tristan Hume
+## UTILISER PRO DE TRISTAN HUME
 
 [Dépôt GitHub](https://github.com/trishume/pro)
 
@@ -208,7 +215,7 @@ Enfin, on peut appliquer une commande à tous les dépôts en même temps avec l
     pro run commande
 
 
-## Quelques commandes git supplémentaires
+## COMMANDES GIT SUPPLÉMENTAIRES
 
 ### Renommer un fichier
 
@@ -292,7 +299,7 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
     # Le commit de la modification du fichier fichier2.txt a été supprimé (voir git log), mais la modification est encore dans le fichier car on n'a pas fait de `--hard` ni de checkout. Git a supprimé tous les commit supérieurs au dernier commit de la branche master. Mais les modifications sont restées (fichiers créés ou modifs dans les fichiers)
 
 
-## github.com
+## GITHUB.COM
 
 ### Rapatrier un dépôt local sur GitHub (ou faire un fork à la main)
 
@@ -341,7 +348,7 @@ Par contre, si on a mis des fichiers en attente (staging avec git add), il faut 
 
 ---
 
-## Git sur Windows
+## GIT SUR WINDOWS
 
 ### Configuration de l'installation
 
@@ -363,7 +370,7 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
 ---
 
-## Git par Marc
+## GIT PAR MARC
 
 ### Pourquoi Git ?
 
@@ -393,7 +400,7 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 
 ---
 
-## Bibliographie
+## BIBLIOGRAPHIE
 
 - [git the simple guide](http://rogerdudler.github.io/git-guide/)
 - [Maîtriser Git en 28 minutes et 32 secondes](https://www.youtube.com/watch?v=5IcYILdejs8)
@@ -401,7 +408,7 @@ Puisque Git Bash fonctionne à partir de MSys2, il inclut :
 - [ProGit de Scott Chacon](https://git-scm.com/book/fr/v2)
 
 
-## Glossaire
+## GLOSSAIRE
 
 - **Repository**   : Dépôt
 - **Check in**     : Dépôt
