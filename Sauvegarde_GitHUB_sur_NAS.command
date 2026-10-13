@@ -60,7 +60,7 @@ monteLeDossierDuNAS()
 {
 	# Création du dossier de montage
 	mkdir ${2}
-	mount -t afp afp://bruno:brunobo@192.168.1.15/${1} ${2}
+	mount -t afp afp://${name}:${password}@192.168.1.15/${1} ${2}
 }
 
 
